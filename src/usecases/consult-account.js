@@ -2,7 +2,7 @@ import {RepositoryAccount} from '../infrastructure/db/repository/repository-acco
 
 export class ConsultAccount {
     async execute() {
-        const response = await new RepositoryAccount().fetch();
+        const response = await new RepositoryAccount().get();
         return response;
         //return await new RepositoryAccount().fetch();
     }
