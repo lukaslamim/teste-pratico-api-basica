@@ -8,9 +8,9 @@ import { DeleteAccountController } from "../controllers/delete-account-controlle
 const router = express.Router();
 
 router.get("/accounts", new ConsultAllAccountsController().handle);
-router.post("/accounts", new CreateAccountController().handle);
-router.get("/accounts/:id", new ConsultAccountController().handle);
-router.put("/accounts/:id", new UpdateAccountController().handle);
-router.delete("/accounts/:id", new DeleteAccountController().handle);
+router.get("/account/:id", new ConsultAccountController().handle);
+router.post("/account", new CreateAccountController().handle);
+router.patch("/account/:id", new UpdateAccountController().handle);
+router.delete("/account/:id", new DeleteAccountController().handle);
 
 export default router;

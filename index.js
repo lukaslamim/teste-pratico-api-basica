@@ -17,6 +17,7 @@ const port = 5000;
 
 server.listen(port, async () => {
   console.log(`Server is running`);
+
   // Init database connection
   mongoSetup().then(() => {
     //Routes Accounts

@@ -1,8 +1,8 @@
 import {RepositoryAccount} from '../infrastructure/db/repository/repository-accounts.js';
 
 export class ConsultAccount {
-    async execute() {
-        const response = await new RepositoryAccount().get();
+    async execute(id) {
+        const response = await new RepositoryAccount().get(id);
         return response;
         //return await new RepositoryAccount().fetch();
     }
