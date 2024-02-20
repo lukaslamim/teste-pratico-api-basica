@@ -2,7 +2,7 @@ import {RepositoryAccount} from '../infrastructure/db/repository/repository-acco
 
 export class UpdateAccount {
   async execute(id, data) {
-    const response = await new RepositoryAccount().update(id, data);
+    const response = await new RepositoryAccount().patch(id, data);
     return response;
     //return await new RepositoryAccount().update(id, data);
   }

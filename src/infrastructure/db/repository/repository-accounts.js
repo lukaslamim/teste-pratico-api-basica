@@ -1,26 +1,26 @@
 import {AccountSchema} from "../schema/schema-accounts.js";
 
 export class RepositoryAccount {
-    async post(data) {
-        //return await AccountSchema;
-    }
-    async delete() {
-        return await AccountSchema.deleteOne({
-            "id" : id
-        });
-    }
-
-    async get(id) {
-        return await AccountSchema.findOne({
-            "id" : id
-        });
-    }
-
-    async update() {
-       // return await AccountSchema.updateOne();
-    }
 
     async findAll() {
         return await AccountSchema.find();
+    }
+
+    async get(id) {
+        return await AccountSchema.findById(id);
+    }
+
+    async post(data) {
+        return await AccountSchema.create(
+            {nome: data.nome, cnpj: data.cnpj}
+        );
+    }
+    async delete(id) {
+        return await AccountSchema.findByIdAndDelete(id);
+    }
+    async patch(id, data) {
+        return await AccountSchema.findByIdAndUpdate(id,
+            {nome: data.nome, cnpj: data.cnpj}
+        );
     }
 }
