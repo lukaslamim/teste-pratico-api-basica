@@ -12,5 +12,5 @@ router.get("/account/:id", new GetAccountController().handle);
 router.post("/account", new PostAccountController().handle);
 router.patch("/account/:id", new PatchAccountController().handle);
 router.delete("/account/:id", new DeleteAccountController().handle);
-
+router.put()
 export default router;
